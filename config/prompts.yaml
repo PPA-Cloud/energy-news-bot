@@ -1,0 +1,92 @@
+# Energy News Bot - LLM Prompts
+
+# Filter prompt: Determines if article is relevant to the energy industry
+filter_prompt: |
+  Is this article about the energy industry (production, infrastructure, markets, policy)?
+  
+  INCLUDE if about:
+  - Energy production (oil, gas, coal, nuclear, solar, wind, hydro, etc.)
+  - Power generation projects and companies
+  - Energy discoveries (oil/gas reserves, mineral deposits)
+  - Transmission & distribution grid infrastructure
+  - Utility companies and operations
+  - Energy markets, pricing, trading, contracts (PPAs, etc.)
+  - Energy storage and battery systems (utility-scale)
+  - Data centers and their power consumption/infrastructure
+  - AI infrastructure energy demand
+  - Energy policy, regulations, FERC/state commission decisions
+  - Wholesale power markets (PJM, CAISO, ERCOT, etc.)
+  - Energy company announcements (new reactors, projects, M&A)
+  - Energy technology (SMRs, turbines, grid tech, etc.)
+  
+  EXCLUDE (consumer products, not industry):
+  - Electric vehicles (EVs), car sales, charging stations
+  - Consumer appliances (heat pumps, water heaters, home HVAC)
+  - Residential solar panels or home batteries
+  - Climate activism or environmental protests
+  - General climate science (unless tied to energy policy)
+  
+  Article Title: {title}
+  Article Summary: {summary}
+  
+  Answer with ONLY: Yes or No
+  If Yes, provide brief reason (1 sentence)
+
+# Tweet generation prompt: Creates engaging, concise tweets
+tweet_prompt: |
+  Create a simple, concise tweet about this energy news article.
+  
+  Article Title: {title}
+  Article Summary: {summary}
+  Article URL: {url}
+  
+  CRITICAL: DO NOT use "BREAKING", "🔔", or any alarm emojis. These trigger spam filters.
+  
+  TWEET FORMAT (max 200 characters):
+  
+  [Direct factual statement about what happened]
+  
+  [1-2 sentences with key details]
+  
+  Why it matters: [Impact/significance]
+  
+  STRICT RULES:
+  - NO "BREAKING" or alert emojis (🔔⚠️🚨)
+  - Start with company name, location, or direct fact
+  - Examples: "Duke Energy plans...", "New study shows...", "Federal regulators approve..."
+  - Keep it simple and factual
+  - Max 200 characters total
+  - Make each tweet unique
+  
+  Generate ONLY the tweet text, nothing else.
+
+# Hashtag generation prompt
+hashtag_prompt: |
+  Based on this article, suggest 2-3 relevant hashtags.
+  
+  Article: {title}
+  
+  Choose from these categories:
+  - Technology: #Solar #Wind #Nuclear #Hydrogen #Storage #EV
+  - Market: #Energy #CleanEnergy #RenewableEnergy #PowerMarket
+  - Policy: #EnergyPolicy #CleanPower #GreenEnergy
+  - Location: #California #Texas #Offshore #US
+  - Data/AI: #DataCenters #AI #TechInfrastructure #AIEnergy
+  
+  Return ONLY the hashtags, space-separated, no explanations.
+  Example: #Solar #California #CleanEnergy
+
+# Image extraction prompt
+image_prompt: |
+  Look at this article and identify the best image URL.
+  
+  Article HTML: {html}
+  
+  Priority order:
+  1. Featured/hero image
+  2. First content image
+  3. Open Graph image (og:image)
+  4. Twitter card image
+  
+  Return ONLY the image URL, nothing else.
+  If no image found, return: NONE

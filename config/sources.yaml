@@ -1,0 +1,189 @@
+# Energy News Sources - RSS Feeds
+
+# Priority 1: Major news outlets (check first)
+priority_1:
+  - name: "Bloomberg Energy"
+    rss_url: "https://www.bloomberg.com/feeds/bpol/energy.rss"
+    website: "https://www.bloomberg.com/energy"
+    
+  - name: "Reuters Energy"
+    rss_url: "https://www.reuters.com/business/energy/rss"
+    website: "https://www.reuters.com/business/energy"
+    
+  - name: "Wall Street Journal Energy"
+    rss_url: "https://feeds.wsj.com/wsj/xml/rss/3_7455.xml"
+    website: "https://www.wsj.com/news/business/energy"
+    
+  - name: "Associated Press Energy"
+    rss_url: "https://apnews.com/hub/energy/feed"
+    website: "https://apnews.com/hub/energy"
+    
+  - name: "Washington Post Energy & Environment"
+    rss_url: "https://feeds.washingtonpost.com/rss/business/energy-environment"
+    website: "https://www.washingtonpost.com/business/energy-environment"
+    
+  - name: "New York Times Energy"
+    rss_url: "https://rss.nytimes.com/services/xml/rss/nyt/Climate.xml"
+    website: "https://www.nytimes.com/section/climate"
+    
+  - name: "CNBC Energy"
+    rss_url: "https://www.cnbc.com/id/19854910/device/rss/rss.html"
+    website: "https://www.cnbc.com/energy"
+
+# Priority 2: Energy industry publications (main sources)
+priority_2:
+  - name: "Utility Dive"
+    rss_url: "https://www.utilitydive.com/feeds/news/"
+    website: "https://www.utilitydive.com"
+    
+  - name: "Energy Storage News"
+    rss_url: "https://www.energy-storage.news/feed/"
+    website: "https://www.energy-storage.news"
+    
+  - name: "PV Magazine"
+    rss_url: "https://www.pv-magazine.com/feed/"
+    website: "https://www.pv-magazine.com"
+    
+  - name: "Greentech Media"
+    rss_url: "https://www.greentechmedia.com/rss/all"
+    website: "https://www.greentechmedia.com"
+    
+  - name: "CleanTechnica"
+    rss_url: "https://cleantechnica.com/feed/"
+    website: "https://cleantechnica.com"
+    
+  - name: "Canary Media"
+    rss_url: "https://www.canarymedia.com/feed"
+    website: "https://www.canarymedia.com"
+    
+  - name: "E&E News"
+    rss_url: "https://www.eenews.net/rss/all"
+    website: "https://www.eenews.net"
+    
+  - name: "Power Magazine"
+    rss_url: "https://www.powermag.com/feed/"
+    website: "https://www.powermag.com"
+    
+  - name: "Renewable Energy World"
+    rss_url: "https://www.renewableenergyworld.com/feeds/all/"
+    website: "https://www.renewableenergyworld.com"
+    
+  - name: "Wind Power Monthly"
+    rss_url: "https://www.windpowermonthly.com/rss"
+    website: "https://www.windpowermonthly.com"
+    
+  - name: "Solar Industry Magazine"
+    rss_url: "https://solarindustrymag.com/feed"
+    website: "https://solarindustrymag.com"
+    
+  - name: "PV Tech"
+    rss_url: "https://www.pv-tech.org/feed"
+    website: "https://www.pv-tech.org"
+
+# Priority 3: Regional and specialized
+priority_3:
+  - name: "California Energy Markets"
+    rss_url: "https://www.newsdata.com/california_energy_markets/rss"
+    website: "https://www.newsdata.com/california_energy_markets"
+    
+  - name: "Midwest Energy News"
+    rss_url: "https://midwestenergynews.com/feed/"
+    website: "https://midwestenergynews.com"
+    
+  - name: "Southeast Energy News"
+    rss_url: "https://southeastenergynews.com/feed/"
+    website: "https://southeastenergynews.com"
+    
+  - name: "DOE News"
+    rss_url: "https://www.energy.gov/rss/news.xml"
+    website: "https://www.energy.gov/news"
+    
+  - name: "EIA Today in Energy"
+    rss_url: "https://www.eia.gov/rss/todayinenergy.xml"
+    website: "https://www.eia.gov/todayinenergy"
+    
+  - name: "FERC News"
+    rss_url: "https://www.ferc.gov/news-events/news/rss.xml"
+    website: "https://www.ferc.gov/news-events/news"
+
+# Priority 4: Additional major sources
+priority_4:
+  - name: "S&P Global Platts"
+    rss_url: "https://www.spglobal.com/commodityinsights/en/rss-feed"
+    website: "https://www.spglobal.com/commodityinsights"
+    
+  - name: "Energy Central"
+    rss_url: "https://energycentral.com/rss.xml"
+    website: "https://energycentral.com"
+    
+  - name: "RTO Insider"
+    rss_url: "https://www.rtoinsider.com/feed/"
+    website: "https://www.rtoinsider.com"
+    
+  - name: "Axios Energy"
+    rss_url: "https://api.axios.com/feed/energy"
+    website: "https://www.axios.com/energy"
+    
+  - name: "The Hill Energy & Environment"
+    rss_url: "https://thehill.com/policy/energy-environment/feed/"
+    website: "https://thehill.com/policy/energy-environment"
+    
+  - name: "Politico Energy"
+    rss_url: "https://www.politico.com/rss/energy.xml"
+    website: "https://www.politico.com/energy"
+    
+  - name: "Forbes Energy"
+    rss_url: "https://www.forbes.com/energy/feed/"
+    website: "https://www.forbes.com/energy"
+    
+  - name: "Financial Times Energy"
+    rss_url: "https://www.ft.com/energy?format=rss"
+    website: "https://www.ft.com/energy"
+    
+  - name: "The Guardian Energy"
+    rss_url: "https://www.theguardian.com/environment/energy/rss"
+    website: "https://www.theguardian.com/environment/energy"
+    
+  - name: "NPR Energy"
+    rss_url: "https://feeds.npr.org/1019/rss.xml"
+    website: "https://www.npr.org/sections/energy"
+    
+  - name: "Axios Generate"
+    rss_url: "https://www.axios.com/newsletters/axios-generate"
+    website: "https://www.axios.com/newsletters/axios-generate"
+    
+  - name: "Heatmap News"
+    rss_url: "https://heatmap.news/feed"
+    website: "https://heatmap.news"
+    
+  - name: "GTM Squared"
+    rss_url: "https://www.greentechmedia.com/squared/rss"
+    website: "https://www.greentechmedia.com/squared"
+    
+  - name: "Energy News Network"
+    rss_url: "https://energynews.us/feed/"
+    website: "https://energynews.us"
+    
+  - name: "Transmission Hub"
+    rss_url: "https://www.transmissionhub.com/feed/"
+    website: "https://www.transmissionhub.com"
+    
+  - name: "Electric Light & Power"
+    rss_url: "https://www.elp.com/rss.xml"
+    website: "https://www.elp.com"
+    
+  - name: "T&D World"
+    rss_url: "https://www.tdworld.com/rss.xml"
+    website: "https://www.tdworld.com"
+    
+  - name: "North American Windpower"
+    rss_url: "https://nawindpower.com/feed"
+    website: "https://nawindpower.com"
+    
+  - name: "Renewable Energy Magazine"
+    rss_url: "https://www.renewableenergymagazine.com/rss"
+    website: "https://www.renewableenergymagazine.com"
+    
+  - name: "Energy Manager Today"
+    rss_url: "https://www.energymanagertoday.com/feed/"
+    website: "https://www.energymanagertoday.com"
