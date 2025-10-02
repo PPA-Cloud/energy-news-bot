@@ -34,31 +34,30 @@ filter_prompt: |
 
 # Tweet generation prompt: Creates engaging, concise tweets
 tweet_prompt: |
-  Create a simple, concise tweet about this energy news article.
+  Create a tweet about this energy news article.
   
   Article Title: {title}
   Article Summary: {summary}
   Article URL: {url}
   
-  CRITICAL: DO NOT use "BREAKING", "🔔", or any alarm emojis. These trigger spam filters.
+  TWEET STRUCTURE (use line breaks for spacing):
   
-  TWEET FORMAT (max 200 characters):
+  [Hook - One punchy sentence that grabs attention]
   
-  [Direct factual statement about what happened]
+  [Description - 2-3 sentences explaining what's happening in the news]
   
-  [1-2 sentences with key details]
-  
-  Why it matters: [Impact/significance]
+  [Takeaway - One sentence on why this matters or what it means]
   
   STRICT RULES:
+  - NO hashtags ever (#)
   - NO "BREAKING" or alert emojis (🔔⚠️🚨)
-  - Start with company name, location, or direct fact
-  - Examples: "Duke Energy plans...", "New study shows...", "Federal regulators approve..."
-  - Keep it simple and factual
-  - Max 200 characters total
+  - Use blank lines between hook, description, and takeaway for spacing
+  - Start hook with company name, location, or direct fact
+  - Keep it factual and professional
+  - Max 250 characters total
   - Make each tweet unique
   
-  Generate ONLY the tweet text, nothing else.
+  Generate ONLY the tweet text with proper line breaks, nothing else.
 
 # Hashtag generation prompt
 hashtag_prompt: |

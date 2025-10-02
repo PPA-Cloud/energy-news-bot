@@ -139,29 +139,14 @@ class LLMProcessor:
                 
                 tweet_text = response.choices[0].message.content.strip()
                 
-                # Generate hashtags
-                hashtag_prompt = self.prompts['hashtag_prompt'].format(title=title)
+                # Add attribution link at the end
+                full_tweet = f"{tweet_text}\n\nFor detailed energy data → ppacloud.com"
                 
-                hashtag_response = self.client.chat.completions.create(
-                    model="gpt-4o-mini",
-                    messages=[
-                        {"role": "system", "content": "You suggest relevant hashtags for energy news."},
-                        {"role": "user", "content": hashtag_prompt}
-                    ],
-                    temperature=0.5,
-                    max_tokens=50
-                )
-                
-                hashtags = hashtag_response.choices[0].message.content.strip()
-                
-                # Combine tweet with hashtags and attribution
-                full_tweet = f"{tweet_text}\n\n{hashtags}\n\nFor detailed energy data → ppacloud.com"
-                
-                # Save tweet draft
+                # Save tweet draft (no hashtags)
                 cursor.execute("""
                     INSERT INTO tweets (article_id, tweet_text, hashtags, image_url, article_link, status)
                     VALUES (?, ?, ?, ?, ?, 'draft')
-                """, (article_id, full_tweet, hashtags, image_url, url))
+                """, (article_id, full_tweet, "", image_url, url))
                 
                 generated += 1
                 logger.info(f"✓ Generated tweet for: {title[:50]}...")
