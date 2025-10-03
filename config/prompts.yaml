@@ -34,30 +34,27 @@ filter_prompt: |
 
 # Tweet generation prompt: Creates engaging, concise tweets
 tweet_prompt: |
-  Create a tweet about this energy news article.
+  Create a concise tweet about this energy news article.
   
   Article Title: {title}
   Article Summary: {summary}
   Article URL: {url}
   
-  TWEET STRUCTURE (use line breaks for spacing):
-  
-  [Hook - One punchy sentence that grabs attention]
-  
-  [Description - 2-3 sentences explaining what's happening in the news]
-  
-  [Takeaway - One sentence on why this matters or what it means]
-  
   STRICT RULES:
+  - Start with: 🚨 BREAKING: [relevant emoji] then the news
+  - Choose ONE relevant emoji based on topic: ⚡(energy/power) ☀️(solar) 💨(wind) 🔋(battery/storage) 💰(funding) 🏗️(construction) ⚛️(nuclear) 🌊(hydro)
+  - MAXIMUM 230 characters total (including the 🚨 BREAKING: prefix and emoji)
+  - **ALWAYS include specific numbers, metrics, and quantities from the article** (MW, GW, $millions, project sizes, percentages, etc.)
+  - Include company names, project names, and locations when available
   - NO hashtags ever (#)
-  - NO "BREAKING" or alert emojis (🔔⚠️🚨)
-  - Use blank lines between hook, description, and takeaway for spacing
-  - Start hook with company name, location, or direct fact
+  - NO URLs or links in the tweet text (we add those separately)
+  - NO line breaks - write as a single paragraph
   - Keep it factual and professional
-  - Max 250 characters total
   - Make each tweet unique
   
-  Generate ONLY the tweet text with proper line breaks, nothing else.
+  Example format: 🚨 BREAKING: ⚡ Madison Energy acquires NextEra's 900 MW distributed solar portfolio across 25 states, expanding to nearly 1 GW of operating assets.
+  
+  Generate ONLY the tweet text as a single paragraph, nothing else. Do NOT include any URLs.
 
 # Hashtag generation prompt
 hashtag_prompt: |
