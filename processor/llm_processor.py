@@ -110,7 +110,6 @@ class LLMProcessor:
             LEFT JOIN tweets t ON a.id = t.article_id
             WHERE a.status = 'approved' AND t.id IS NULL
             ORDER BY a.published_at DESC
-            LIMIT 20
         """)
         articles = cursor.fetchall()
         
@@ -139,14 +138,18 @@ class LLMProcessor:
                 
                 tweet_text = response.choices[0].message.content.strip()
                 
-                # Add attribution link at the end
-                full_tweet = f"{tweet_text}\n\nFor detailed energy data → ppacloud.com"
+                # Hard enforce 280 character limit (including newlines)
+                if len(tweet_text) > 280:
+                    # Truncate to 277 chars and add ellipsis
+                    tweet_text = tweet_text[:277] + "..."
                 
-                # Save tweet draft (no hashtags)
+                full_tweet = tweet_text
+                
+                # Save tweet draft (no hashtags, no images)
                 cursor.execute("""
                     INSERT INTO tweets (article_id, tweet_text, hashtags, image_url, article_link, status)
                     VALUES (?, ?, ?, ?, ?, 'draft')
-                """, (article_id, full_tweet, "", image_url, url))
+                """, (article_id, full_tweet, "", None, url))
                 
                 generated += 1
                 logger.info(f"✓ Generated tweet for: {title[:50]}...")

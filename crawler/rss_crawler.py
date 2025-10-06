@@ -113,12 +113,8 @@ class RSSCrawler:
             if published_at < cutoff_time:
                 continue
             
-            # Extract image URL
+            # Image extraction disabled - images were low quality
             image_url = None
-            if hasattr(entry, 'media_content') and entry.media_content:
-                image_url = entry.media_content[0].get('url')
-            elif hasattr(entry, 'media_thumbnail') and entry.media_thumbnail:
-                image_url = entry.media_thumbnail[0].get('url')
             
             # Insert article (ignore if duplicate URL)
             try:
